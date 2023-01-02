@@ -1,0 +1,141 @@
+.container {
+    top: 0px;
+    left: 0px;
+    width: 1536px;
+    height: 768px;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.left-container {
+    top: 185px;
+    left: 3200px;
+    width: 624px;
+    height: 391px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border-radius: 21px;
+    opacity: 1;
+    margin-top: 129px;
+    margin-left: 250px;
+}
+.right-container {
+    top: 166px;
+    left: 658px;
+    width: 406px;
+    height: 537px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px rgb(0 0 0 / 16%);
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    opacity: 1;
+    margin-top: 62px;
+    margin-left: -300px;
+    //margin-right: 376px;
+}
+.logo {
+    margin-top: 70px;
+    border-radius: 50% !important;
+    width: 207px;
+    height: 207px;
+    margin-left: 61px;
+}
+p {
+    text-align: left;
+    font: normal normal medium 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    font-size: large;
+    text-transform: uppercase;
+    margin-left: 84px;
+    margin-top: 25px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: transparent;
+    margin-top: 18px;
+    padding: 6px;
+    margin-bottom: 11px;
+}
+.header button {
+    background-color: transparent;
+    border: transparent;
+    font-size: 25px;
+    font-weight: lighter;
+    font: normal normal medium 25px/33px Roboto;
+
+}
+
+.field{
+    margin: 0rem;
+    height: 58px;
+    padding: 0px 40px;
+    margin-bottom: 1rem;
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 325px;
+}
+mat-form-field{
+    width: 94%;
+}
+.button {
+    background-color: #A03037;
+    border: none;
+    color: white;
+    padding: 11px 106px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 6px;
+    margin-top: -44px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 70px;
+    margin-top: 0.5rem;
+
+}
+.link {
+    margin-left: 230px;
+    color: #878787;
+}
+.choose-btn{
+    display: flex;
+    flex-direction: row;
+    margin-top: 38px;
+    margin-left: 55px;
+    justify-content: space-between center;
+
+}
+.facebook-btn{
+top: 507px;
+left: 727px;
+width: 140px;
+height: 37px;
+background: #4266B2;
+border: 1px solid white;
+border-radius: 3px;
+opacity: 1;
+color: white;
+}
+.google-btn{
+top: 507px;
+left: 860px;
+width: 140px;
+height: 37px;
+background: #F5F5F5;
+border: 1px solid #E4E4E4;
+border-radius: 3px;
+opacity: 1;
+margin-left: 14px;
+}
+.text{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 123px;
+    font: normal normal bold 14px/18px Meiryo UI;
+    color: #333333;
+    opacity: 1;
+}
