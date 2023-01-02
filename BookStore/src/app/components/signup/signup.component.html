@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="left-container">
+        <img class="logo" src="../../../assets/2766594.png">
+        <p>ONLINE BOOK SHOPPING</p>
+    </div>
+
+    <div class="right-container">
+        <div class="header">
+            <div>
+                <button style="color: #878787;" routerLink="/signin">LOGIN</button>
+            </div>
+            <div>
+                <button routerLink="/signup">SIGNUP</button>
+            </div>
+        </div>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-field">
+                <div class="field">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input matInput placeholder="Full Name" type="text" formControlName="fullName">
+                        <mat-error>Enter Full Name</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email Id</mat-label>
+                        <input matInput placeholder="Email Id" type="text" formControlName="email">
+                        <mat-error>Enter Email Id</mat-error>
+
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" type="password" formControlName="password">
+                        <mat-error>Enter Password</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput placeholder="Mobile Number" type="text" formControlName="mobileNumber">
+                        <mat-error>Enter Mobile Number</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="sign-field">
+                    <button class="button">Signup</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
