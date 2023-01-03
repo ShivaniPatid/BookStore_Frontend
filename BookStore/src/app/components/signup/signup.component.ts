@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { UserService } from 'src/app/services/UserService/user.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -10,7 +10,7 @@ export class SignupComponent implements OnInit{
   signupForm! : FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private user: UserService) { }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
@@ -25,8 +25,18 @@ export class SignupComponent implements OnInit{
 
   onSubmit() {
     this.submitted = true;
-    if (this.signupForm.invalid) {
-      return;
+
+    if (this.signupForm.valid) {
+      console.log("User registered successfully");
+      let data = {
+        fullName : this.signupForm.value.fullName,
+        emailId : this.signupForm.value.email,
+        password : this.signupForm.value.password,
+        phoneNumber : Number(this.signupForm.value.mobileNumber)
+      }
+      this.user.signup(data).subscribe((response : any) => {
+        console.log(response);
+      })
   }
   }
 }
