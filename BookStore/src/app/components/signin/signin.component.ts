@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/UserService/user.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class SigninComponent implements OnInit{
   signinForm! : FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private user : UserService) { }
 
   ngOnInit() {
     this.signinForm = this.formBuilder.group({
@@ -24,8 +25,17 @@ export class SigninComponent implements OnInit{
 
   onSubmit() {
     this.submitted = true;
-    if (this.signinForm.invalid) {
-      return;
+    if (this.signinForm.valid) {
+      //console.log("User login successfully");
+      let data = {
+        emailId : this.signinForm.value.email,
+        password : this.signinForm.value.password
+      }
+      this.user.signin(data).subscribe((response : any) => {
+        console.log(response);
+        localStorage.setItem("token",response.data);
+
+      })
   }
   }
 }
