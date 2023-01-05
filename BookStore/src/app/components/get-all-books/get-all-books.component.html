@@ -1,0 +1,46 @@
+
+<div class="body" fxLayout="column">
+    <div class="container" fxLayout="column" ngClass.sm="container-sm" ngClass.md="container-md">
+        <div class="header" fxLayout="row">
+            <div class="books_count" fxLayout="row">
+                <p id="books" style="font-size: 22px; margin-top: 13px;">Books</p>
+                <p id="count" style="font-size: 12px; margin: 15px 0 0 5px;">({{booksCount}} items)</p>
+            </div>
+            <div class="sort" fxLayout="row">
+                <select name="sort" id="sort">
+                    <option>Sort by relevance</option>
+                    <option value="low">low to high</option>
+                    <option value="high">high to low</option>
+                    <option value="new">Newest</option>
+                </select>
+            </div>
+        </div>
+        <div class="books_list" fxLayout="row">
+            <div class="book" *ngFor="let book of bookList">
+                <div>
+                    <button class="buttonImage">
+                        <img class="ImageofBook" [src]="book.bookImage" (click)="quickView(book)">
+                    </button>
+                </div>
+                <div class="book_data">
+                    <div class="name">{{book.bookName}}</div>
+                    <div class="author">by {{book.authorName}}</div>
+                    <div class="ratingView">
+                        <div class="rating"><p style="margin-top: -1px;margin-left: 3px;font-size: 12px;">{{book.rating}}</p>
+                            <img src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" class="star">
+                        </div>
+                        <div class="view">
+                            <p>({{book.totalview}})</p>
+                        </div>
+                    </div>
+                    <div class="cost">
+                        <p class="dis-price"><b>Rs.{{book.discountedPrice}}</b></p>
+                        <p class="price"><s>Rs.{{book.originalPrice}}</s></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

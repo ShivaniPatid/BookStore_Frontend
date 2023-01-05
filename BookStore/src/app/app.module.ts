@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatDividerModule} from '@angular/material/divider';
 
 import {MatInputModule} from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +17,8 @@ import { SigninComponent } from './components/signin/signin.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { HomeComponent } from './components/home/home.component';
+import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
+import { QuickViewComponent } from './components/quick-view/quick-view.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,9 @@ import { HomeComponent } from './components/home/home.component';
     SigninComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
-    HomeComponent
+    HomeComponent,
+    GetAllBooksComponent,
+    QuickViewComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

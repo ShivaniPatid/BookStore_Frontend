@@ -34,7 +34,7 @@ export class SigninComponent implements OnInit{
       this.user.signin(data).subscribe((response : any) => {
         console.log(response);
         localStorage.setItem("token",response.data);
-        this.router.navigateByUrl("/dashboard");
+        this.router.navigateByUrl("/dashboard/getAllBooks");
       })
   }
   }
