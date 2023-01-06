@@ -17,11 +17,13 @@
         </div>
         <div class="books_list" fxLayout="row">
             <div class="book" *ngFor="let book of bookList">
-                <div>
+                
+               <div>
                     <button class="buttonImage">
                         <img class="ImageofBook" [src]="book.bookImage" (click)="quickView(book)">
                     </button>
                 </div>
+                
                 <div class="book_data">
                     <div class="name">{{book.bookName}}</div>
                     <div class="author">by {{book.authorName}}</div>
