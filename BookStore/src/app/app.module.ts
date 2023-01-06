@@ -19,6 +19,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { HomeComponent } from './components/home/home.component';
 import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
 import { QuickViewComponent } from './components/quick-view/quick-view.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { QuickViewComponent } from './components/quick-view/quick-view.component
     ResetPasswordComponent,
     HomeComponent,
     GetAllBooksComponent,
-    QuickViewComponent
+    QuickViewComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

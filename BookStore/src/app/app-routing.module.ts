@@ -7,6 +7,7 @@ import { QuickViewComponent } from './components/quick-view/quick-view.component
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 const routes: Routes = [
 
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path : 'dashboard', component : HomeComponent,
   children : [
     {path : 'getAllBooks', component : GetAllBooksComponent},
-    {path : 'quikView', component : QuickViewComponent}
+    {path : 'quikView', component : QuickViewComponent},
+    {path : 'wishlist', component : WishlistComponent}
   ]
 }
 ];
