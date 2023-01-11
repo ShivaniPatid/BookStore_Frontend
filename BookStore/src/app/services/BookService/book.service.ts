@@ -17,10 +17,10 @@ export class BookService {
     let header = {
       headers : new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization' : 'Bearer '+ this.token  
+        //'Authorization' : 'Bearer '+ this.token  
       })
      } 
-     return this.htttpService.getService("/Book/GetAllBooks",true,header);
+     return this.htttpService.getService("/Book/GetAllBooks",false,header);
   }
 
   getBookByBookId(bookId : any)
