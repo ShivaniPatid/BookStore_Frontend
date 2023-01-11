@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
 
 import {MatInputModule} from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +24,9 @@ import { HomeComponent } from './components/home/home.component';
 import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
 import { QuickViewComponent } from './components/quick-view/quick-view.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CartComponent } from './components/cart/cart.component';
+import { OrderPlacedComponent } from './components/order-placed/order-placed.component';
+import { OrdersComponent } from './components/orders/orders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +37,10 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     HomeComponent,
     GetAllBooksComponent,
     QuickViewComponent,
-    WishlistComponent
+    WishlistComponent,
+    CartComponent,
+    OrderPlacedComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -39,11 +49,15 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     FlexLayoutModule,
     MatInputModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

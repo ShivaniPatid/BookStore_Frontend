@@ -14,19 +14,19 @@
             </div>
 
             <div class="profile-cart" fxLayout="row">
-                <button class="icons" mat-flat-button>
+                <button class="icons" >
                     <div fxLayout="column" fxLayoutAlign="center center"
-                        [matMenuTriggerFor]="fullName==(''||undefined)? profile : profile">
+                        [matMenuTriggerFor]="Fullname==(''||undefined)? noprofile : profile">
                         <img src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg" style="margin: 0px 5px; filter: invert(100%);"
                             width="24px" height="24px" >
-                        <span fxLayoutAlign="center center">{{fullName == (''||null||undefined) ? "Profile" :
-                            fullName}}</span>
+                        <span fxLayoutAlign="center center">{{Fullname == (''||null||undefined) ? "profile" :
+                            Fullname}}</span>
                     </div>
                     <mat-menu #profile="matMenu">
-                        <span class="profile"><b>Hello {{fullName}},</b></span>
+                        <span class="profile"><b>Hello {{Fullname}},</b></span>
                         <div class="profile-g"><img src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg"
                                 width="20px" height="20px"><span>Profile</span></div>
-                        <div class="profile-g"><img src="../../../assets/shopping_bag_FILL0_wght400_GRAD0_opsz48.svg"
+                        <div class="profile-g" routerLink="/dashboard/orders"><img src="../../../assets/shopping_bag_FILL0_wght400_GRAD0_opsz48.svg"
                                 width="18px" height="18px"><span>My Orders</span></div>
                         <div class="profile-g" routerLink="/dashboard/wishlist"><img src="../../../assets/favorite_FILL0_wght400_GRAD0_opsz48.svg"
                                 width="20px" height="20px"><span>My Wishlist</span></div>
@@ -44,7 +44,7 @@
                     </mat-menu>
                 </button>
 
-                <button class="icons" mat-flat-button>
+                <button class="icons" (click)="cart()">
                     <div fxLayout="column" fxLayoutAlign="center center" style="padding-left: 50px;">
                         <img src="../../../assets/supermarket.svg" style="margin: 0px 5px; " width="24px" height="24px">
                         <span fxLayoutAlign="center center">Cart</span>

@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/UserService/user.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,17 +9,33 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   
-  fullName: any='';
+  Fullname: any;
 
-  constructor(private route:Router) { }
+  constructor(private route:Router, private userService : UserService) { }
 
   ngOnInit(): void {
-    this.fullName = localStorage.getItem('FullName');
+    this.getUser();
   }
 
+  getUser()
+  {
+    this.userService.getUserService().subscribe((response : any) => {
+      console.log("User Data : ",response.data);
+      this.Fullname = response.data.fullName;
+      
+    })
+  }
   logout()
   {
     localStorage.removeItem('token');
     this.route.navigateByUrl("/signin")
+    console.log("Logout Successfully...")
   }
+
+  cart()
+  {
+    this.route.navigateByUrl('/dashboard/cart');
+  }
+
+ 
 }
