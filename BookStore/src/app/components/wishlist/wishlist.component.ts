@@ -1,0 +1,38 @@
+import { Component, OnInit } from '@angular/core';
+import { WishlistService } from 'src/app/services/Wishlist/wishlist.service';
+
+@Component({
+  selector: 'app-wishlist',
+  templateUrl: './wishlist.component.html',
+  styleUrls: ['./wishlist.component.scss']
+})
+export class WishlistComponent implements OnInit {
+
+  bookId = localStorage.getItem('bookId');
+  wishlist:any;
+  
+  constructor(private wish : WishlistService){ }
+
+  ngOnInit(): void {
+    this.getWishlist();
+  }
+
+  getWishlist()
+  {
+    this.wish.getwishlistService().subscribe((response : any) =>
+    {
+      console.log(response.data);
+      this.wishlist = response.data;
+      //console.log(this.wishlist)
+    })  
+  }
+
+  removefromWishlist(wishlistId : any)
+  {
+    this.wish.removeFromWishlistService(wishlistId).subscribe((response : any) => {
+      console.log("Removed from wishlist...", response);
+      this.getWishlist();
+    })
+  }
+
+}
