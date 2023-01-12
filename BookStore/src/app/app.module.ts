@@ -27,6 +27,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CartComponent } from './components/cart/cart.component';
 import { OrderPlacedComponent } from './components/order-placed/order-placed.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { FilterPipe } from './pipe/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { OrdersComponent } from './components/orders/orders.component';
     WishlistComponent,
     CartComponent,
     OrderPlacedComponent,
-    OrdersComponent
+    OrdersComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

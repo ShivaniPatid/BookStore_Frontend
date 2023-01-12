@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/DataService/data.service';
 import { UserService } from 'src/app/services/UserService/user.service';
 @Component({
   selector: 'app-home',
@@ -10,8 +11,8 @@ export class HomeComponent implements OnInit {
 
   
   Fullname: any;
-
-  constructor(private route:Router, private userService : UserService) { }
+  value : any;
+  constructor(private route:Router, private userService : UserService, private dataservice : DataService) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -37,5 +38,14 @@ export class HomeComponent implements OnInit {
     this.route.navigateByUrl('/dashboard/cart');
   }
 
- 
+  searchBook(event : any)
+  {
+    console.log("input in search field===",event.target.value);
+    this.value=event.target.value
+    let Ddata={
+      type:'search',
+      data:[this.value]
+    }
+    this.dataservice.SendBookDetails(Ddata)
+  }
 }
